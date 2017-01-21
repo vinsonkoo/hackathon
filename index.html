@@ -1,0 +1,18 @@
+<script language="JavaScript" type="text/javascript">
+
+function reload()
+{
+   setTimeout('reloadImg("refresh")',250)
+};
+
+function reloadImg(id) 
+{ 
+   var obj = document.getElementById(id); 
+   var date = new Date(); 
+   obj.src = "http://192.168.2.106:88/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=guest&pwd=guest&t=" + Math.floor(date.getTime()/1000); 
+} 
+
+</script>
+
+<img style="width: auto; max-width: 100%; height: 600px;" src="http://192.168.2.106:88/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=guest&pwd=guest&t=" name="refresh" id="refresh" onload='reload(this)' onerror='reload(this)'> 
+<!-- <img src = "http://192.168.2.106:88/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=guest&pwd=guest"> -->
